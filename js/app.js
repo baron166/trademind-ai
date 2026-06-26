@@ -1,1 +1,1 @@
-
+// TradeMind AI JavaScript
