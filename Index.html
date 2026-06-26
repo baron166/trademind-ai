@@ -1,101 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <link rel="stylesheet" href="css/style.css">
-<meta charset="UTF-8">
-<h1>TradeMind AI 🚀 LIVE TEST</h1>
-<style>
-  <script src="js/app.js"></script>
-body {
-  font-family: Arial;
-  background: #0b1220;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeMind AI</title>
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  background: #111a2e;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-input, select {
-  width: 90%;
-  padding: 10px;
-  margin: 8px;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  padding: 12px 20px;
-  background: #22c55e;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.result {
-  margin-top: 20px;
-  padding: 15px;
-  background: #0f172a;
-  border-radius: 10px;
-}
-</style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="container">
-<h1>TradeMind AI</h1>
-<p>Analyze global deals before you buy</p>
+    <header>
+        <h1>🚀 TradeMind AI</h1>
+        <p>Analyze Global Deals Before You Buy</p>
+    </header>
 
-<input id="product" placeholder="Product name">
+    <main>
 
-<select id="buy">
-<option>Japan</option>
-<option>USA</option>
-<option>Germany</option>
-</select>
+        <section class="card">
 
-<select id="sell">
-<option>Jordan</option>
-<option>UAE</option>
-<option>Turkey</option>
-</select>
+            <label>Product</label>
+            <input type="text" id="product" placeholder="iPhone 16 Pro">
 
-<input id="price" placeholder="Purchase price ($)">
+            <label>Buy Country</label>
+            <select id="buyCountry">
+                <option>Japan</option>
+                <option>USA</option>
+                <option>Germany</option>
+            </select>
 
-<button onclick="calc()">Analyze Deal</button>
+            <label>Sell Country</label>
+            <select id="sellCountry">
+                <option>Jordan</option>
+                <option>Turkey</option>
+                <option>UAE</option>
+            </select>
 
-<div class="result" id="out"></div>
-</div>
+            <label>Purchase Price ($)</label>
+            <input type="number" id="price" placeholder="1000">
 
-<script>
-function calc(){
-let price = Number(document.getElementById("price").value);
+            <button onclick="analyzeDeal()">
+                Analyze Deal
+            </button>
 
-let shipping = price * 0.08;
-let tax = price * 0.12;
-let profit = price * 0.30 - shipping - tax;
+        </section>
 
-let status = "Weak Deal ❌";
-if(profit > 100) status = "Good Deal ⚠️";
-if(profit > 250) status = "Strong Deal ✅";
+        <section class="card">
 
-document.getElementById("out").innerHTML = `
-Shipping: $${shipping.toFixed(2)} <br>
-Tax: $${tax.toFixed(2)} <br>
-Estimated Profit: $${profit.toFixed(2)} <br><br>
-<b>${status}</b>
-`;
-}
-</script>
+            <h2>Analysis Result</h2>
+
+            <div id="result">
+                Enter product information then click Analyze.
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
 
 </body>
 </html>
