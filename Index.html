@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TradeMind AI</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .box {
+      margin-top: 20px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>TradeMind AI</h1>
+  <p>Know if your deal is profitable before you buy</p>
+
+  <input id="product" placeholder="Product name"><br>
+
+  <select id="buyCountry">
+    <option>Japan</option>
+    <option>USA</option>
+    <option>Germany</option>
+  </select>
+
+  <select id="sellCountry">
+    <option>Jordan</option>
+    <option>Turkey</option>
+    <option>UAE</option>
+  </select><br>
+
+  <input id="price" placeholder="Purchase price ($)"><br>
+
+  <button onclick="analyze()">Analyze</button>
+
+  <div class="box" id="result"></div>
+
+  <script>
+    function analyze() {
+      let price = Number(document.getElementById("price").value);
+
+      let shipping = price * 0.1;
+      let fees = price * 0.15;
+      let profit = price * 0.25 - shipping - fees;
+
+      let status = "Weak Deal ❌";
+      if (profit > 100) status = "Good Deal ⚠️";
+      if (profit > 300) status = "Excellent Deal ✅";
+
+      document.getElementById("result").innerHTML = `
+        <h3>Result</h3>
+        <p>Shipping: $${shipping.toFixed(2)}</p>
+        <p>Fees: $${fees.toFixed(2)}</p>
+        <p>Estimated Profit: $${profit.toFixed(2)}</p>
+        <h2>${status}</h2>
+      `;
+    }
+  </script>
+
+</body>
+</html>
