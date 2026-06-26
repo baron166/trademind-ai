@@ -9,68 +9,49 @@
 </head>
 
 <body>
+    <header class="hero">
 
-<header>
+<h1>🚀 TradeMind AI</h1>
 
-    <h1> TradeMind AI</h1>
+<p>
+The world's smartest platform for analyzing international trade deals.
+</p>
 
-    <p>
-        AI-powered platform for analyzing international trade deals.
-    </p>
+<div class="hero-buttons">
+<a href="analyze.html">
+<button>Start Free Analysis</button>
+</a>
 
-    <div class="hero-buttons">
-
-        <button>Start Free</button>
-
-        <button>Learn More</button>
-
-    </div>
+<button>Learn More</button>
+</div>
 
 </header>
 
-    <main>
+<section class="features">
 
-        <section class="card">
+<div class="feature">
+<h2>📈 Smart Profit Analysis</h2>
+<p>Know your expected profit before buying.</p>
+</div>
 
-            <label>Product</label>
-            <input type="text" id="product" placeholder="iPhone 16 Pro">
+<div class="feature">
+<h2>🌍 Global Markets</h2>
+<p>Compare prices between countries instantly.</p>
+</div>
 
-            <label>Buy Country</label>
-            <select id="buyCountry">
-                <option>Japan</option>
-                <option>USA</option>
-                <option>Germany</option>
-            </select>
+<div class="feature">
+<h2>🤖 AI Recommendations</h2>
+<p>Receive intelligent trade suggestions.</p>
+</div>
 
-            <label>Sell Country</label>
-            <select id="sellCountry">
-                <option>Jordan</option>
-                <option>Turkey</option>
-                <option>UAE</option>
-            </select>
+</section>
 
-            <label>Purchase Price ($)</label>
-            <input type="number" id="price" placeholder="1000">
+<footer>
 
-            <button onclick="analyzeDeal()">
-                Analyze Deal
-            </button>
+<p>© 2026 TradeMind AI</p>
 
-        </section>
+</footer>
 
-        <section class="card">
-
-            <h2>Analysis Result</h2>
-
-            <div id="result">
-                Enter product information then click Analyze.
-            </div>
-
-        </section>
-
-    </main>
-
-    <script src="js/app.js"></script>
-
+<script src="js/app.js"></script>
 </body>
 </html>
