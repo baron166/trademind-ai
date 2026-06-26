@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TradeMind AI</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 40px;
-    }
+<meta charset="UTF-8">
+<title>TradeMind AI</title>
+<style>
+body {
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
 
-    input, select {
-      padding: 10px;
-      margin: 10px;
-      width: 200px;
-      border-radius: 8px;
-      border: none;
-    }
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #111a2e;
+  padding: 20px;
+  border-radius: 12px;
+}
 
-    button {
-      padding: 12px 20px;
-      background: #22c55e;
-      border: none;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 8px;
+  border: none;
+}
 
-    .box {
-      margin-top: 20px;
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      min-width: 300px;
-    }
-  </style>
+button {
+  padding: 12px 20px;
+  background: #22c55e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #0f172a;
+  border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>TradeMind AI</h1>
-  <p>Know if your deal is profitable before you buy</p>
+<div class="container">
+<h1>TradeMind AI</h1>
+<p>Analyze global deals before you buy</p>
 
-  <input id="product" placeholder="Product name"><br>
+<input id="product" placeholder="Product name">
 
-  <select id="buyCountry">
-    <option>Japan</option>
-    <option>USA</option>
-    <option>Germany</option>
-  </select>
+<select id="buy">
+<option>Japan</option>
+<option>USA</option>
+<option>Germany</option>
+</select>
 
-  <select id="sellCountry">
-    <option>Jordan</option>
-    <option>Turkey</option>
-    <option>UAE</option>
-  </select><br>
+<select id="sell">
+<option>Jordan</option>
+<option>UAE</option>
+<option>Turkey</option>
+</select>
 
-  <input id="price" placeholder="Purchase price ($)"><br>
+<input id="price" placeholder="Purchase price ($)">
 
-  <button onclick="analyze()">Analyze</button>
+<button onclick="calc()">Analyze Deal</button>
 
-  <div class="box" id="result"></div>
+<div class="result" id="out"></div>
+</div>
 
-  <script>
-    function analyze() {
-      let price = Number(document.getElementById("price").value);
+<script>
+function calc(){
+let price = Number(document.getElementById("price").value);
 
-      let shipping = price * 0.1;
-      let fees = price * 0.15;
-      let profit = price * 0.25 - shipping - fees;
+let shipping = price * 0.08;
+let tax = price * 0.12;
+let profit = price * 0.30 - shipping - tax;
 
-      let status = "Weak Deal ❌";
-      if (profit > 100) status = "Good Deal ⚠️";
-      if (profit > 300) status = "Excellent Deal ✅";
+let status = "Weak Deal ❌";
+if(profit > 100) status = "Good Deal ⚠️";
+if(profit > 250) status = "Strong Deal ✅";
 
-      document.getElementById("result").innerHTML = `
-        <h3>Result</h3>
-        <p>Shipping: $${shipping.toFixed(2)}</p>
-        <p>Fees: $${fees.toFixed(2)}</p>
-        <p>Estimated Profit: $${profit.toFixed(2)}</p>
-        <h2>${status}</h2>
-      `;
-    }
-  </script>
+document.getElementById("out").innerHTML = `
+Shipping: $${shipping.toFixed(2)} <br>
+Tax: $${tax.toFixed(2)} <br>
+Estimated Profit: $${profit.toFixed(2)} <br><br>
+<b>${status}</b>
+`;
+}
+</script>
 
 </body>
 </html>
