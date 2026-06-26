@@ -20,11 +20,69 @@ header p{
 }
 
 main{
-    max-width:900px;
-    margin:auto;
-    display:grid;
-    gap:20px;
-    padding:20px;
+<section class="hero">
+
+<h2>AI-powered Global Trade Intelligence</h2>
+
+<p>
+Analyze international deals, estimate profit, compare markets,
+and make smarter trading decisions in seconds.
+</p>
+
+<button>Start Free Analysis</button>
+
+</section>
+
+<section class="features">
+
+<div class="feature">
+<h3>📈 Smart Profit Analysis</h3>
+<p>Estimate your expected profit before buying.</p>
+</div>
+
+<div class="feature">
+<h3>🌎 Global Markets</h3>
+<p>Compare prices between countries.</p>
+</div>
+
+<div class="feature">
+<h3>🤖 AI Recommendations</h3>
+<p>Receive intelligent buying suggestions.</p>
+</div>
+
+</section>
+
+<section class="categories">
+
+<h2>Supported Categories</h2>
+
+<div class="grid">
+
+<div>📱 Smartphones</div>
+
+<div>📷 Cameras</div>
+
+<div>🚗 Cars</div>
+
+<div>⌚ Watches</div>
+
+</div>
+
+</section>
+
+<section class="premium">
+
+<h2>TradeMind AI Pro</h2>
+
+<p>
+Unlock advanced AI analysis,
+real-time prices,
+and unlimited deal reports.
+</p>
+
+<button>Coming Soon</button>
+
+</section>
 }
 
 .card{
